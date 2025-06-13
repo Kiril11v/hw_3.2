@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = prompt("your name:");
+         if (name === null) {
+        alert("ok,bye");
+    }
+        else if (!name.trim() || /\d/.test(name)) { // перевіряє що рядок не порожній,  /\d/.test(name) чи є в рядку цифри і перевірка
+            alert("error: invalid name");
+        }
+        else if (name.length < 2 || name.length > 15) {
+            alert("error: name must be between 2 and 15 words");
+        }
+
+        let age = prompt("your age:");
+         if (age === null) {
+        alert("ok,bye");
+    }
+        else if (!age.trim() || isNaN(age) || !Number.isInteger(+age) || age > 100 || age <= 0) { // isNaN(age) що не є числом, !Number.isInteger(+age) що не є цілим і що не можна перетворити в число, що більше 100 або дорівнює або менше 100
+            alert("error: invalid age");
+        }
+
+        let gender = prompt("your gender:");
+         if (name === null) {
+        alert("ok,bye");
+    }
+        else if (!gender.trim() || gender != "man" || gender != "woman") {
+            alert("error: only man or woman");
+        }
+
+
+         else if (name.trim() && name.length > 2 && name.length < 15 && !/\d/.test(name)) {
+            if (age.trim() && !isNaN(age) && Number.isInteger(+age) && age < 100 && age >= 0) {
+                if (gender.trim() && isNaN() && !/\d/.test(age) && gender === "man" || gender === "woman") {
+        alert(`My name is ${name}
+               I'm ${age} years old
+               I'm a ${gender}`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
