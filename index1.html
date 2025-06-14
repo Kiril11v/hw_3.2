@@ -7,43 +7,50 @@
 </head>
 <body>
     <script>
+        while (true) {
         let name = prompt("your name:");
          if (name === null) {
         alert("ok,bye");
+        break;
     }
-        else if (!name.trim() || /\d/.test(name)) { // перевіряє що рядок не порожній,  /\d/.test(name) чи є в рядку цифри і перевірка
+        else if (!name.trim() || /\d/.test(name)) { // перевіряє що рядок порожній,  /\d/.test(name) чи є в рядку цифри і перевірка
             alert("error: invalid name");
+        continue;
         }
         else if (name.length < 2 || name.length > 15) {
             alert("error: name must be between 2 and 15 words");
+            continue;
+        }
+        else if (!/^[A-Za-z]+$/.test(name)) { // [A-Za-z]+ - одна або більше латинських літер
+            alert("error: only Latin letters")
+            continue;
         }
 
         let age = prompt("your age:");
          if (age === null) {
         alert("ok,bye");
+        break;
     }
-        else if (!age.trim() || isNaN(age) || !Number.isInteger(+age) || age > 100 || age <= 0) { // isNaN(age) що не є числом, !Number.isInteger(+age) що не є цілим і що не можна перетворити в число, що більше 100 або дорівнює або менше 100
+        else if (!age.trim() || isNaN(age) || !Number.isInteger(+age) || age > 100 || age <= 0) { // isNaN(age) що не є числом, !Number.isInteger(+age) що не є цілим і що не можна перетворити в число, що більше 100 або дорівнює або менше 0
             alert("error: invalid age");
+            continue;
         }
 
-        let gender = prompt("your gender:");
+        let gender = prompt("your gender man or woman:");
          if (name === null) {
         alert("ok,bye");
+        break;
     }
-        else if (!gender.trim() || gender != "man" || gender != "woman") {
+        else if (!gender.trim() || (gender !== "man" && gender !== "woman")) {  // що якщо не дорівнює man або woman це помилка
             alert("error: only man or woman");
+            continue;
         }
 
-
-         else if (name.trim() && name.length > 2 && name.length < 15 && !/\d/.test(name)) {
-            if (age.trim() && !isNaN(age) && Number.isInteger(+age) && age < 100 && age >= 0) {
-                if (gender.trim() && isNaN() && !/\d/.test(age) && gender === "man" || gender === "woman") {
         alert(`My name is ${name}
-               I'm ${age} years old
-               I'm a ${gender}`);
-                }
-            }
-        }
+I'm ${age} years old
+I'm a ${gender}`);
+    break;
+    }
     </script>
 </body>
 </html>
