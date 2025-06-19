@@ -41,23 +41,17 @@
 
     message += '\n';
 
-while(true) {
     if (confirm("enter OK if you a man")) {
   message += "You are a man";
-  break;
 } 
 else {
   if (confirm("enter OK if you a woman")) {
   message += "You are a woman";
-  break;
 } 
 else {
   message += `${PITY_MESSAGE} your gender`;
-  break;
 }
  }
-
-}
 
 
 alert (message);
